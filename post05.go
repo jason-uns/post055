@@ -184,7 +184,6 @@ func ListUsers() ([]Userdata, error) {
 		return users, err
 	}
 	defer db.Close()
-	fmt.Println("test")
 
 	queryStatement := `select username, userid, firstname, lastname, description from users inner join userdata on users.id = userdata.userid`
 	rows, err := db.Query(queryStatement)
